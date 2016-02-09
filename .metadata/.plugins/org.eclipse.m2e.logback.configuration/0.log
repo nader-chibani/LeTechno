@@ -1561,3 +1561,11 @@ org.eclipse.core.internal.resources.ResourceException: Resource '/LeTechno' does
 2016-02-09 20:30:41,525 [Worker-363] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2016-02-09 20:30:41,525 [Worker-363] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2016-02-09 20:30:41,549 [Worker-363] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-02-09 23:35:34,875 [Worker-399] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-02-09 23:35:42,167 [Worker-399] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-02-09 23:35:42,931 [Worker-399] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-02-09 23:35:43,036 [Worker-399] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-02-09 23:36:30,960 [Worker-402] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-02-09 23:36:31,768 [Worker-402] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-02-09 23:36:32,140 [Worker-402] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-02-09 23:36:32,164 [Worker-402] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource

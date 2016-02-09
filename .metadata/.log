@@ -3348,3 +3348,42 @@ org.eclipse.jst.j2ee.commonarchivecore.internal.exception.OpenFailureException: 
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2016-02-09 20:30:41.526
 !MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-02-09 23:35:38.387
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-02-09 23:35:43.035
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-02-09 23:36:30.961
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-02-09 23:36:32.164
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.jst.j2ee.ejb 4 0 2016-02-09 23:36:57.317
+!MESSAGE IWAE0006E Archive is not a valid EJB JAR File because the deployment descriptor can not be found (case sensitive): META-INF/ejb-jar.xml
+
+!STACK 0
+org.eclipse.jst.j2ee.commonarchivecore.internal.exception.OpenFailureException: IWAE0006E Archive is not a valid EJB JAR File because the deployment descriptor can not be found (case sensitive): META-INF/ejb-jar.xml
+
+	at org.eclipse.jst.j2ee.commonarchivecore.internal.impl.CommonarchiveFactoryImpl.openSpecificArchive(CommonarchiveFactoryImpl.java:821)
+	at org.eclipse.jst.j2ee.commonarchivecore.internal.impl.CommonarchiveFactoryImpl.openSpecificArchive(CommonarchiveFactoryImpl.java:832)
+	at org.eclipse.jst.j2ee.commonarchivecore.internal.impl.CommonarchiveFactoryImpl.openEJBJarFile(CommonarchiveFactoryImpl.java:706)
+	at org.eclipse.jst.j2ee.ejb.componentcore.util.EJBArtifactEdit.asArchive(EJBArtifactEdit.java:579)
+	at org.eclipse.jst.j2ee.componentcore.EnterpriseArtifactEdit.asArchive(EnterpriseArtifactEdit.java:274)
+	at org.eclipse.jst.j2ee.internal.ejb.workbench.validation.EJBHelper.loadEjbModel(EJBHelper.java:522)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.eclipse.wst.validation.internal.operations.WorkbenchContext.loadModel(WorkbenchContext.java:558)
+	at org.eclipse.jst.j2ee.internal.ejb.workbench.validation.EJBHelper.loadModel(EJBHelper.java:279)
+	at org.eclipse.wst.validation.internal.operations.WorkbenchContext.loadModel(WorkbenchContext.java:542)
+	at org.eclipse.jst.j2ee.model.internal.validation.EJBValidationContext.loadModel(EJBValidationContext.java:115)
+	at org.eclipse.jst.j2ee.model.internal.validation.EJBValidator.fullValidate(EJBValidator.java:384)
+	at org.eclipse.jst.j2ee.model.internal.validation.EJBValidator.commonValidate(EJBValidator.java:82)
+	at org.eclipse.jst.j2ee.model.internal.validation.EJBValidator.validateInJob(EJBValidator.java:108)
+	at org.eclipse.jst.j2ee.internal.ejb.workbench.validation.UIEjbValidator.validateInJob(UIEjbValidator.java:53)
+	at org.eclipse.wst.validation.internal.operations.ValidatorJob.run(ValidatorJob.java:78)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
