@@ -1,0 +1,41 @@
+package edu.letechno.session;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+import edu.letechno.entity.*;
+/**
+ * Session Bean implementation class UserSession
+ */
+@Stateless
+@LocalBean
+public class UserSession implements IUserSession{
+
+	@PersistenceContext
+	private EntityManager em;
+   public User user;
+	
+   @Override
+    public void CreateUser(User usr){
+    	em.persist(usr);
+    }
+    
+    @Override
+    public boolean login(String login, String password){
+    	
+    	Query r = em.createQuery("select x from user x where username =: login and password =: password ");
+    	r.setParameter("login", login);
+    	r.setParameter("password", password);
+    	User user = (User) r.getSingleResult();
+    	if (user.getName().equals(login))
+    		return true;
+    	else
+    		return false;
+    }
+    
+    
+
+}

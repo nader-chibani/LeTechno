@@ -1,0 +1,5 @@
+package edu.letechno.session;
+
+public interface IUserSession {
+
+}

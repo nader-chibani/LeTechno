@@ -1,0 +1,50 @@
+package edu.letechno.entity;
+
+import java.io.Serializable;
+import javax.persistence.*;
+
+/**
+ * Entity implementation class for Entity: Courses
+ *
+ */
+@Entity
+
+public class Courses implements Serializable {
+
+	private int CourseId;
+	private String CourseName;
+	private String CourseOwnerID;
+	private String CourseDesc;	
+	
+	private static final long serialVersionUID = 1L;
+
+	public Courses() {
+		super();
+	}
+
+	@Id
+	public int getCourseId() {
+		return CourseId;
+	}
+
+	public void setCourseId(int courseId) {
+		CourseId = courseId;
+	}
+
+	public String getCourseOwnerID() {
+		return CourseOwnerID;
+	}
+
+	public void setCourseOwnerID(String courseOwnerID) {
+		CourseOwnerID = courseOwnerID;
+	}
+
+	public String getCourseName() {
+		return CourseName;
+	}
+
+	public void setCourseName(String courseName) {
+		CourseName = courseName;
+	}
+   
+}

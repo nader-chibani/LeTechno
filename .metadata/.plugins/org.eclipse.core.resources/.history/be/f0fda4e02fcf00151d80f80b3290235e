@@ -1,0 +1,24 @@
+package edu.letechno.session;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import edu.letechno.entity.*;
+/**
+ * Session Bean implementation class UserSession
+ */
+@Stateless
+@LocalBean
+public class UserSession {
+
+    /**
+     * Default constructor. 
+     */
+    public UserSession() {
+        // TODO Auto-generated constructor stub
+    }
+    
+    
+    
+    
+
+}

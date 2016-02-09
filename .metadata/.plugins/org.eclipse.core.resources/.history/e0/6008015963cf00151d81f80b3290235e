@@ -1,0 +1,5 @@
+package net.letechno.entity;
+
+public class Userso {
+
+}

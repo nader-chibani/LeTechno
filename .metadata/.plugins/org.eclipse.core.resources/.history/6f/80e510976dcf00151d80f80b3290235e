@@ -1,0 +1,21 @@
+package edu.letechno.entity;
+
+import java.io.Serializable;
+import javax.persistence.*;
+
+/**
+ * Entity implementation class for Entity: Question
+ *
+ */
+@Entity
+
+public class Question implements Serializable {
+
+	
+	private static final long serialVersionUID = 1L;
+
+	public Question() {
+		super();
+	}
+   
+}

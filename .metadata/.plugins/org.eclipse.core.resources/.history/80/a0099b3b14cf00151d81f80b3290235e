@@ -1,0 +1,9 @@
+package edu.letechno.session;
+
+public interface IChapterSession {
+	
+	public Chapter AddChapter(Chapter e);
+	public void DeleteChapter(Chapter e);
+	public Chapter Updatehapter(Chapter e);
+	
+}

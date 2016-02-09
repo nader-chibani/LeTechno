@@ -1,0 +1,56 @@
+package edu.letechno.session;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import edu.letechno.entity.Courses;
+import edu.letechno.entity.User;
+
+/**
+ * Session Bean implementation class CourseSession
+ */
+@Stateless
+@LocalBean
+public class CourseSession implements ICourseSession{
+
+	@PersistenceContext
+	private EntityManager em;
+
+	
+	public CourseSession() {
+        // TODO Auto-generated constructor stub
+    }
+
+	@Override
+	public int getCourseNumber() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Courses[] getCoursesList(String owner) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Courses AddCourse(Courses e) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void DeleteCourse(Courses e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void UpdateCourse(Courses e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

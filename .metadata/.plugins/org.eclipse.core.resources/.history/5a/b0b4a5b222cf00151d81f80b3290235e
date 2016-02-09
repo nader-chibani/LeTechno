@@ -1,0 +1,80 @@
+package edu.letechno.session;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+import edu.letechno.entity.Chapter;
+import edu.letechno.entity.Courses;
+import edu.letechno.entity.User;
+
+/**
+ * Session Bean implementation class CourseSession
+ */
+@Stateless
+@LocalBean
+public class CourseSession implements ICourseSession{
+
+	@PersistenceContext
+	private EntityManager em;
+
+	
+	public CourseSession() {
+        // TODO Auto-generated constructor stub
+    }
+
+	@Override
+	public int getCourseNumber() {
+		return 0;
+	}
+
+	@Override
+	public List<Courses> getCoursesList(String owner) {
+		
+		List<Courses> CoursesList;
+		
+		if( UserSession.utilisateur.getRole().equals("admin") || UserSession.utilisateur.getRole().equals("trainer")){
+			Query r;
+			if (owner.equals("all")){
+				r = em.createQuery("select x from courses x");}
+			else
+				{r = em.createQuery("select x from courses x where courseownerid =: owner ");}
+		    	r.setParameter("owner", owner);
+		    	CoursesList = (List<Courses>) r.getResultList();	
+		}else{
+				CoursesList = null ;
+			}
+		return CoursesList;
+	}
+
+	@Override
+	public Courses AddCourse(Courses e) {
+		em.persist(e);
+		return e;
+	}
+
+	@Override
+	public void DeleteCourse(Courses e) {
+		em.remove(e);
+		
+	}
+
+	@Override
+	public void UpdateCourse(Courses e) {
+		//*******
+	}
+
+	@Override
+	public Courses getCourseDetail(int CourseId) {
+		Query r = em.createQuery("select x from courses x where courseid =: id ");
+    	r.setParameter("id", CourseId);
+    	Courses course = (Courses) r.getSingleResult();
+		return course;
+	}
+
+}

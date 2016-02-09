@@ -1,0 +1,33 @@
+package edu.letechno.session;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import edu.letechno.entity.*;
+/**
+ * Session Bean implementation class UserSession
+ */
+@Stateless
+@LocalBean
+public class UserSession {
+
+	@PersistenceContext
+	private EntityManager em;
+   public User user;
+	/**
+     * Default constructor. 
+     */
+    public UserSession() {
+        // TODO Auto-generated constructor stub
+    }
+    
+    public boolean login(String login, String password){
+    	if(user.login
+    	return true;
+    }
+    
+    
+
+}

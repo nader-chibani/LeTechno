@@ -1,0 +1,10 @@
+package edu.letechno.session;
+
+import javax.ejb.Remote;
+
+@Remote
+public interface IUniversitySession {
+
+	public void AddUniversity(University e);
+	
+}

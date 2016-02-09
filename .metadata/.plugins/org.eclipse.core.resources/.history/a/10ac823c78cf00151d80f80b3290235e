@@ -1,0 +1,39 @@
+package edu.letechno.session;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+import edu.letechno.entity.University;
+
+/**
+ * Session Bean implementation class UniversitySession
+ */
+@Stateless
+@LocalBean
+public class UniversitySession implements IUniversitySession{
+
+    /**
+     * Default constructor. 
+     */
+    public UniversitySession() {
+        // TODO Auto-generated constructor stub
+    }
+
+	@Override
+	public University AddUniversity(University e) {
+		return null;
+	}
+
+	@Override
+	public boolean DeleteUniversity(University e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public University UpdateUniversity(University e) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

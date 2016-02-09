@@ -1,0 +1,20 @@
+package edu.letechno.session;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateful;
+
+/**
+ * Session Bean implementation class firstSession
+ */
+@Stateful
+@LocalBean
+public class firstSession {
+
+    /**
+     * Default constructor. 
+     */
+    public firstSession() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

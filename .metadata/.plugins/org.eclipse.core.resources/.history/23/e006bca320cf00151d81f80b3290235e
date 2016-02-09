@@ -1,0 +1,16 @@
+package edu.letechno.session;
+
+import javax.ejb.Remote;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import edu.letechno.entity.User;
+
+@Remote
+public interface IUserSession {
+	
+	public void CreateUser(User usr);
+	public void DropUser(User usr);
+	public User login(String login, String password);
+	public User getUserById(int id);
+}

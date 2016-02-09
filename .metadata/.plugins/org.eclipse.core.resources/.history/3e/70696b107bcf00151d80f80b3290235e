@@ -1,0 +1,60 @@
+package edu.letechno.session;
+
+import java.util.List;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+import edu.letechno.entity.Courses;
+import edu.letechno.entity.User;
+
+/**
+ * Session Bean implementation class CourseSession
+ */
+@Stateless
+@LocalBean
+public class CourseSession implements ICourseSession{
+
+	@PersistenceContext
+	private EntityManager em;
+
+	
+	public CourseSession() {
+        // TODO Auto-generated constructor stub
+    }
+
+	@Override
+	public int getCourseNumber() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Courses[] getCoursesList(String owner) {
+		Query r = em.createQuery("select x from user x where courseownerid =: owner ");
+    	r.setParameter("owner", owner);
+    	List<Courses> CrousesList = List<Courses> r.getResultList();
+		return null;
+	}
+
+	@Override
+	public Courses AddCourse(Courses e) {
+		em.persist(e);
+		return e;
+	}
+
+	@Override
+	public void DeleteCourse(Courses e) {
+		em.remove(e);
+		
+	}
+
+	@Override
+	public void UpdateCourse(Courses e) {
+		//*******
+	}
+
+}

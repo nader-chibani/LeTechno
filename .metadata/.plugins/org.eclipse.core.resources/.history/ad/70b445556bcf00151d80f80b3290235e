@@ -1,0 +1,54 @@
+package edu.letechno.entity;
+
+import java.io.Serializable;
+import java.lang.String;
+import javax.persistence.*;
+
+/**
+ * Entity implementation class for Entity: Chapter
+ *
+ */
+@Entity
+
+public class Chapter implements Serializable {
+
+	
+	private int ChapterId;
+	private Course CourseId;
+	private String videoUrl;
+	private String Content;
+	private static final long serialVersionUID = 1L;
+
+	public Chapter() {
+		super();
+	}   
+	public int getChapterId() {
+		return this.ChapterId;
+	}
+
+	public void setChapterId(int ChapterId) {
+		this.ChapterId = ChapterId;
+	}   
+	public Course getCourseId() {
+		return this.CourseId;
+	}
+
+	public void setCourseId(Course CourseId) {
+		this.CourseId = CourseId;
+	}   
+	public String getVideoUrl() {
+		return this.videoUrl;
+	}
+
+	public void setVideoUrl(String videoUrl) {
+		this.videoUrl = videoUrl;
+	}   
+	public String getContent() {
+		return this.Content;
+	}
+
+	public void setContent(String Content) {
+		this.Content = Content;
+	}
+   
+}

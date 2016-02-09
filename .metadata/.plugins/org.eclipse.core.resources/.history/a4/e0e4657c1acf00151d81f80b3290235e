@@ -1,0 +1,58 @@
+package edu.letechno.session;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateful;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import edu.letechno.entity.*;
+
+@Stateful
+@LocalBean
+public class UserSession implements IUserSession{
+
+	@PersistenceContext
+	private EntityManager em;
+	
+   @Override
+    public void CreateUser(User usr){
+    	em.persist(usr);
+    }
+    
+    @Override
+    public boolean login(String login, String password,HttpServletRequest request){
+    	
+    	Query r = em.createQuery("select x from user x where username =: login and password =: password ");
+    	r.setParameter("login", login);
+    	r.setParameter("password", password);
+    	User user = (User) r.getSingleResult();
+    	if (user.getName().equals(login))
+    	HttpSession session = request.getSession();
+    		return true;
+    	else
+    		return false;
+    }
+    
+    
+    @Override
+    public User getUserById(int id){
+    	
+    	Query r = em.createQuery("select x from user x where userid =: id ");
+    	r.setParameter("id", id);
+    	User user = (User) r.getSingleResult();
+    		return user;
+    }
+
+	@Override
+	public void DropUser(User usr) {
+		em.remove(usr);
+		
+	}
+    
+    
+
+}

@@ -1,0 +1,12 @@
+package edu.letechno.session;
+
+import edu.letechno.entity.Chapter;
+
+public interface IChapterSession {
+	
+	public Chapter AddChapter(Chapter e);
+	public void DeleteChapter(Chapter e);
+	public Chapter Updatehapter(Chapter e);
+	public list<Chpater> getChapterList(int CourseId);
+	
+}

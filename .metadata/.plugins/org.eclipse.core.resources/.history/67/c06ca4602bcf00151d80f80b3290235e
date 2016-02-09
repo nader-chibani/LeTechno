@@ -1,0 +1,23 @@
+package edu.letechno.entity;
+
+import java.io.Serializable;
+import javax.persistence.*;
+
+/**
+ * Entity implementation class for Entity: User
+ *
+ */
+@Entity
+@Table(name = "DBUSER")
+public class User implements Serializable {
+
+	private int userid;
+	private String username;
+	private String createdBy;
+	private static final long serialVersionUID = 1L;
+
+	public User() {
+		super();
+	}
+   
+}

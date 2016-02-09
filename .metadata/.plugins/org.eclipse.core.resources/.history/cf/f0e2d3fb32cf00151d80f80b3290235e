@@ -1,0 +1,8 @@
+package edu.letechno.session;
+
+import edu.letechno.entity.User;
+
+public interface IUserSession {
+	public void CreateUser(User usr);
+	 public boolean login(String login, String password);
+}

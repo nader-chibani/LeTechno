@@ -1,0 +1,11 @@
+package edu.letechno.session;
+
+import javax.ejb.Remote;
+import edu.letechno.entity.Courses;
+
+emote
+public interface ICourseSession {
+	
+	public int getCourseNumber();
+	public Courses AddCourse(Courses e);
+}

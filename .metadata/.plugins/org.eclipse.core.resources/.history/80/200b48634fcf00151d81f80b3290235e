@@ -1,0 +1,7 @@
+package net.letechno.entity;
+
+public class lol {
+	
+	public static int n;
+	public static int m;
+}

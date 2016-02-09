@@ -1,0 +1,44 @@
+package edu.letechno.entity;
+
+import java.io.Serializable;
+import java.util.Date;
+import javax.persistence.*;
+
+/**
+ * Entity implementation class for Entity: TrainerUniversity
+ *
+ */
+@Entity @IdClass(User.class) @IdClass(University.class) 
+public class TrainerUniversity implements Serializable {
+
+	@ManyToOne
+	@JoinColumn(name = "uniId")
+	private University uniId;
+	@ManyToOne
+	@JoinColumn(name = "userId")
+	private User TrainerId;
+	private Date AdhesionDate;
+	private static final long serialVersionUID = 1L;
+
+	
+	public TrainerUniversity(University uniId, User trainerId, Date adhesionDate) {
+		uniId = uniId;
+		TrainerId = trainerId;
+		AdhesionDate = adhesionDate;
+	}
+
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return super.hashCode();
+	}
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return super.equals(obj);
+	}
+
+
+	
+   
+}

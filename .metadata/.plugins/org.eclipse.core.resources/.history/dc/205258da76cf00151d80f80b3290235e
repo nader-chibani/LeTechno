@@ -1,0 +1,25 @@
+package edu.letechno.entity;
+
+import java.io.Serializable;
+import javax.persistence.*;
+
+/**
+ * Entity implementation class for Entity: Choice
+ *
+ */
+@Entity
+
+public class Choice implements Serializable {
+
+	@Id private int ChoiceId;
+	@ManyToOne
+	@JoinColumn(name = "QstId")
+	private Question question;
+	private String Choice;
+	private static final long serialVersionUID = 1L;
+
+	public Choice() {
+		super();
+	}
+   
+}

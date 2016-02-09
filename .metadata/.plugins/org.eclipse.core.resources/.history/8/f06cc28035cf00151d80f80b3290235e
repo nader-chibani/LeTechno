@@ -1,0 +1,27 @@
+package edu.letechno.test;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+
+import edu.letechno.session.IUserSession;
+
+public class Test {
+	
+	public static void main(String[] args) {
+		Context context;
+		try {
+			
+			context = new InitialContext();
+			Object o= context.lookup("traducteur/Traducteur!traducteur.ITraduction");
+			
+			IUserSession traducteur=(IUserSession) o ;
+			System.out.println(traducteur.login("nom"));
+			
+			
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+	}
+	
+}

@@ -1,0 +1,56 @@
+package edu.letechno.session;
+
+import java.util.List;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import edu.letechno.entity.Chapter;
+
+/**
+ * Session Bean implementation class ChapterSession
+ */
+@Stateless
+@LocalBean
+public class ChapterSession implements IChapterSession{
+
+	@PersistenceContext
+	private EntityManager em; 
+	
+    public ChapterSession() {
+     
+    }
+
+	@Override
+	public Chapter AddChapter(Chapter e) {
+		em.persist(e);
+		return null;
+	}
+
+	@Override
+	public void DeleteChapter(Chapter e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Chapter Updatehapter(Chapter e) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Chapter> getChapterList(int CourseId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Chapter getChapterById(int Chapterid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

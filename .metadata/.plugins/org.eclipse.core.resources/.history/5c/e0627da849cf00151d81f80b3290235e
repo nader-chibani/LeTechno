@@ -1,0 +1,6 @@
+package net.letechno.entity;
+
+public @interface lol {
+	
+	public static int n;
+}
