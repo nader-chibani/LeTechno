@@ -11,20 +11,20 @@ import javax.persistence.*;
 @Entity 
 public class TrainerUniversity implements Serializable {
 
-	@Id
+	@Id @GeneratedValue private int id;
 	@ManyToOne
-	@JoinColumn(name = "uniId")
+	@JoinColumn(name = "uniId" , referencedColumnName="uniId")
 	private University uniId;
 	@ManyToOne
-	@JoinColumn(name = "userId")
-	private User TrainerId;
+	@JoinColumn(name = "Trainer", referencedColumnName="userId")
+	private User Trainer;
 	private Date AdhesionDate;
 	private static final long serialVersionUID = 1L;
 
 	
 	public TrainerUniversity(University uniId, User trainerId, Date adhesionDate) {
 		setUniId(uniId);
-		TrainerId = trainerId;
+		Trainer = trainerId;
 		setAdhesionDate(adhesionDate);
 	}
 	public University getUniId() {
@@ -34,10 +34,10 @@ public class TrainerUniversity implements Serializable {
 		this.uniId = uniId;
 	}
 	public User getTrainerId() {
-		return TrainerId;
+		return Trainer;
 	}
 	public void setTrainerId(User trainerId) {
-		TrainerId = trainerId;
+		Trainer = trainerId;
 	}
 	public TrainerUniversity() {
 		super();

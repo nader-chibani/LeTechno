@@ -12,10 +12,13 @@ import javax.persistence.*;
 public class University implements Serializable {
 
 	
-	private int uniId;
+	@Id @GeneratedValue private int uniId;
 	private String uniName;
 	private String uniAdress;
-	private String uniAdminId;
+	private String Decription;
+	@ManyToOne
+	@JoinColumn(name="uniAdminId", referencedColumnName="userId")
+	private User uniAdmin;
 	
 	private static final long serialVersionUID = 1L;
 
@@ -23,7 +26,26 @@ public class University implements Serializable {
 		super();
 	}
 
-	@Id
+	
+	public String getDecription() {
+		return Decription;
+	}
+	
+	public void setDecription(String Decription) {
+		this.Decription = Decription;
+	}
+	
+	public University( String uniName, String uniAdress, String decription, User uniAdminId) {
+		this.uniName = uniName;
+		this.uniAdress = uniAdress;
+		Decription = decription;
+		this.uniAdmin = uniAdminId;
+	}
+
+	public void setid (int id){
+		this.uniId = id;
+	}
+
 	public int getUniId() {
 		return uniId;
 	}
@@ -48,12 +70,12 @@ public class University implements Serializable {
 		this.uniAdress = uniAdress;
 	}
 
-	public String getUniAdminId() {
-		return uniAdminId;
+	public User getUniAdminId() {
+		return uniAdmin;
 	}
 
-	public void setUniAdminId(String uniAdminId) {
-		this.uniAdminId = uniAdminId;
+	public void setUniAdminId(User uniAdminId) {
+		this.uniAdmin = uniAdminId;
 	}
    
 }

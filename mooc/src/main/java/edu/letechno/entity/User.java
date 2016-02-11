@@ -1,6 +1,7 @@
 package edu.letechno.entity;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
 
 /**
@@ -10,18 +11,26 @@ import javax.persistence.*;
 @Entity
 public class User implements Serializable {
 
-	private int userId;
+	@Id @GeneratedValue private int userId;
 	private String name;
-	private String lastname;
-	private String username;
-	public User(int userId, String name, String lastname, String username, String email, String password, String role) {
-		this.userId = userId;
+	@Column(unique=true) private String username;
+	private String email;
+	private String password;
+	private String role;
+	private String status;
+	
+	private static final long serialVersionUID = 1L;
+
+	
+	public User(String name, String lastname, String username, String email, String password, String role) {
 		this.name = name;
-		this.lastname = lastname;
 		this.username = username;
 		this.email = email;
 		this.password = password;
 		this.role = role;
+	}
+	public void setid(int id){
+		this.userId = id;
 	}
 	
 	@Override
@@ -29,23 +38,14 @@ public class User implements Serializable {
 		// TODO Auto-generated method stub
 		return super.hashCode();
 	}
-	private String email;
-	private String password;
-	private String role;
 	
-	private static final long serialVersionUID = 1L;
-
+	
 	public User() {
 		super();
 	}
 	
-	@Id
 	public int getUserId() {
 		return this.userId;
-	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
 	}
 
 	public String getUsername() {
@@ -80,19 +80,19 @@ public class User implements Serializable {
 		this.name = name;
 	}
 
-	public String getLastname() {
-		return lastname;
-	}
-
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
-
 	public String getEmail() {
 		return email;
 	}
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 }

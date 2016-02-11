@@ -2,8 +2,10 @@ package edu.letechno.session;
 
 import java.util.List;
 
-import edu.letechno.entity.Chapter;
+import javax.ejb.Remote;
 
+import edu.letechno.entity.Chapter;
+@Remote
 public interface IChapterSession {
 	
 	public Chapter AddChapter(Chapter e);

@@ -10,16 +10,14 @@ import javax.persistence.*;
  *
  */
 @Entity
-
 public class Learning implements Serializable {
 
-	
-	@Id 
+	@Id private int LearningId;
 	@ManyToOne
-	@JoinColumn(name = "userId")
+	@JoinColumn(name = "userId", referencedColumnName="userId")
 	private User user;
 	@ManyToOne
-	@JoinColumn(name = "CourseId")
+	@JoinColumn(name = "CourseId", referencedColumnName="CourseId")
 	private Courses Course;
 	private Date date;
 	private int progress;

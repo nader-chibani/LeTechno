@@ -14,11 +14,16 @@ public class Chapter implements Serializable {
 
 	
 	@Id @GeneratedValue private int ChapterId;
-	private Courses CourseId;
+	
+	@ManyToOne
+	@JoinColumn(name="Course", referencedColumnName="CourseId")
+	private Courses Course;
+	
 	private String videoUrl;
 	private String Content;
+	
 	@ManyToOne
-	@JoinColumn(name = "TestId")
+	@JoinColumn(name = "TestId", referencedColumnName="TestId")
 	private Test test;
 	private static final long serialVersionUID = 1L;
 
@@ -33,11 +38,11 @@ public class Chapter implements Serializable {
 		this.ChapterId = ChapterId;
 	}   
 	public Courses getCourseId() {
-		return this.CourseId;
+		return this.Course;
 	}
 
 	public void setCourseId(Courses CourseId) {
-		this.CourseId = CourseId;
+		this.Course = CourseId;
 	}   
 	public String getVideoUrl() {
 		return this.videoUrl;

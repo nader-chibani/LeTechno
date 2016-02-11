@@ -2,20 +2,18 @@ package edu.letechno.session;
 
 import java.util.List;
 
-import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import edu.letechno.entity.Chapter;
-import edu.letechno.entity.Courses;
 
 /**
  * Session Bean implementation class ChapterSession
  */
 @Stateless
-@LocalBean
+@SuppressWarnings("unchecked")
 public class ChapterSession implements IChapterSession{
 
 	@PersistenceContext
